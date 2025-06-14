@@ -19,27 +19,11 @@ namespace praktekwinform
             InitializeComponent();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void txtUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var registerForm = new login();
-            this.Hide();
-            registerForm.ShowDialog();
-        }
-
         private void btnRegister_Click_1(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-            string confirmPassword = txtConfirmPassword.Text.Trim(); // Ambil input konfirmasi password
+            string confirmPassword = txtConfirmPassword.Text.Trim();
 
             if (username == "" || password == "" || confirmPassword == "")
             {
@@ -83,6 +67,16 @@ namespace praktekwinform
             }
         }
 
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var registerForm = new login();
+            this.Hide();
+            registerForm.ShowDialog();
+        }
+
+        
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -112,5 +106,15 @@ namespace praktekwinform
         {
 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

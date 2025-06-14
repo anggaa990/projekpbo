@@ -23,11 +23,6 @@ namespace praktekwinform
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var registerForm = new register();
@@ -73,7 +68,10 @@ namespace praktekwinform
         {
 
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 

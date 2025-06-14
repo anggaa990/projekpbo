@@ -57,11 +57,6 @@ namespace praktekwinform
             Application.Restart();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
             LoadLaporanDarah();
@@ -124,6 +119,11 @@ namespace praktekwinform
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

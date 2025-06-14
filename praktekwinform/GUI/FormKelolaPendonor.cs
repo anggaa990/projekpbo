@@ -30,110 +30,6 @@ namespace praktekwinform
 
 
         }
-
-        private void ClearForm()
-        {
-            txtNama.Clear();
-            cbJenisKelamin.SelectedIndex = -1;
-            cbGolonganDarah.SelectedIndex = -1;
-            cbRhesus.SelectedIndex = -1;
-            dtpTanggalLahir.Value = DateTime.Today;
-            txtAlamat.Clear();
-            txtNoHP.Clear();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtNama.Text) || cbJenisKelamin.SelectedIndex == -1 ||
-        cbGolonganDarah.SelectedIndex == -1 || cbRhesus.SelectedIndex == -1 ||
-        string.IsNullOrWhiteSpace(txtAlamat.Text) || string.IsNullOrWhiteSpace(txtNoHP.Text))
-            {
-                MessageBox.Show("Harap lengkapi semua data.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Validasi No HP hanya angka
-            if (!txtNoHP.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Nomor HP hanya boleh berisi angka.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            Pendonorbase pendonor = new Pendonor
-            {
-                Nama = txtNama.Text.Trim(),
-                JenisKelamin = cbJenisKelamin.Text,
-                GolonganDarah = cbGolonganDarah.Text,
-                Rhesus = cbRhesus.Text,
-                TanggalLahir = dtpTanggalLahir.Value.Date,
-                Alamat = txtAlamat.Text.Trim(),
-                NoHP = txtNoHP.Text.Trim()
-            };
-
-            pendonor.Simpan();  // Memanggil Simpan menggunakan polymorphism
-
-            MessageBox.Show("Data berhasil disimpan.");
-            ClearForm();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            string username = "Admin";
-            FormMainMenu form = new FormMainMenu(username);
-            this.Hide();
-            form.ShowDialog();
-        }
-
         private void FormKelolaPendonor_Load(object sender, EventArgs e)
         {
 
@@ -172,6 +68,50 @@ namespace praktekwinform
                 };
                 dgvPendonor.Columns.Add(deleteButton);
             }
+        }
+        private void ClearForm()
+        {
+            txtNama.Clear();
+            cbJenisKelamin.SelectedIndex = -1;
+            cbGolonganDarah.SelectedIndex = -1;
+            cbRhesus.SelectedIndex = -1;
+            dtpTanggalLahir.Value = DateTime.Today;
+            txtAlamat.Clear();
+            txtNoHP.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNama.Text) || cbJenisKelamin.SelectedIndex == -1 ||
+        cbGolonganDarah.SelectedIndex == -1 || cbRhesus.SelectedIndex == -1 ||
+        string.IsNullOrWhiteSpace(txtAlamat.Text) || string.IsNullOrWhiteSpace(txtNoHP.Text))
+            {
+                MessageBox.Show("Harap lengkapi semua data.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validasi No HP hanya angka
+            if (!txtNoHP.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Nomor HP hanya boleh berisi angka.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Pendonorbase pendonor = new Pendonor
+            {
+                Nama = txtNama.Text.Trim(),
+                JenisKelamin = cbJenisKelamin.Text,
+                GolonganDarah = cbGolonganDarah.Text,
+                Rhesus = cbRhesus.Text,
+                TanggalLahir = dtpTanggalLahir.Value.Date,
+                Alamat = txtAlamat.Text.Trim(),
+                NoHP = txtNoHP.Text.Trim()
+            };
+
+            pendonor.Simpan();  // Memanggil Simpan menggunakan polymorphism
+
+            MessageBox.Show("Data berhasil disimpan.");
+            ClearForm();
         }
 
         private void dgvPendonor_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -212,8 +152,6 @@ namespace praktekwinform
                     }
                 }
 
-
-
                 else if (dgvPendonor.Columns[e.ColumnIndex].Name == "Edit")
                 {
                     var row = dgvPendonor.Rows[e.RowIndex];
@@ -233,6 +171,29 @@ namespace praktekwinform
                     }
                 }
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string username = "Admin";
+            FormMainMenu form = new FormMainMenu(username);
+            this.Hide();
+            form.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

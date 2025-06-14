@@ -59,7 +59,6 @@
             txtNama.Name = "txtNama";
             txtNama.Size = new Size(250, 28);
             txtNama.TabIndex = 0;
-            txtNama.TextChanged += textBox1_TextChanged;
             // 
             // cbJenisKelamin
             // 
@@ -69,7 +68,6 @@
             cbJenisKelamin.Name = "cbJenisKelamin";
             cbJenisKelamin.Size = new Size(250, 30);
             cbJenisKelamin.TabIndex = 1;
-            cbJenisKelamin.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // cbGolonganDarah
             // 
@@ -79,7 +77,6 @@
             cbGolonganDarah.Name = "cbGolonganDarah";
             cbGolonganDarah.Size = new Size(116, 30);
             cbGolonganDarah.TabIndex = 2;
-            cbGolonganDarah.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // dtpTanggalLahir
             // 
@@ -88,7 +85,6 @@
             dtpTanggalLahir.Name = "dtpTanggalLahir";
             dtpTanggalLahir.Size = new Size(250, 28);
             dtpTanggalLahir.TabIndex = 3;
-            dtpTanggalLahir.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // txtAlamat
             // 
@@ -97,7 +93,6 @@
             txtAlamat.Name = "txtAlamat";
             txtAlamat.Size = new Size(250, 28);
             txtAlamat.TabIndex = 4;
-            txtAlamat.TextChanged += textBox2_TextChanged;
             // 
             // txtNoHP
             // 
@@ -106,7 +101,6 @@
             txtNoHP.Name = "txtNoHP";
             txtNoHP.Size = new Size(250, 28);
             txtNoHP.TabIndex = 5;
-            txtNoHP.TextChanged += textBox3_TextChanged;
             // 
             // btnSimpan
             // 
@@ -117,7 +111,6 @@
             btnSimpan.TabIndex = 6;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = true;
-            btnSimpan.Click += button1_Click;
             // 
             // label1
             // 
@@ -197,7 +190,6 @@
             cbRhesus.Name = "cbRhesus";
             cbRhesus.Size = new Size(116, 30);
             cbRhesus.TabIndex = 17;
-            cbRhesus.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // panel1
             // 

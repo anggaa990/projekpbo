@@ -88,7 +88,6 @@
             txtGolonganDarah.ReadOnly = true;
             txtGolonganDarah.Size = new Size(116, 30);
             txtGolonganDarah.TabIndex = 3;
-            txtGolonganDarah.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
@@ -137,7 +136,6 @@
             label5.Size = new Size(189, 25);
             label5.TabIndex = 8;
             label5.Text = "Tanggal Kadaluarsa";
-            label5.Click += label5_Click;
             // 
             // dtTanggalExp
             // 

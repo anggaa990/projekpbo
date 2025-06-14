@@ -47,14 +47,11 @@ namespace praktekwinform
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void comboBoxPendonor_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            var selected = (Pendonor)comboBoxPendonor.SelectedItem;
+            txtGolonganDarah.Text = selected.GolonganDarah;
+            txtRhesus.Text = selected.Rhesus;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -98,30 +95,12 @@ namespace praktekwinform
             MessageBox.Show("Data stok berhasil disimpan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
-        private void txtRhesus_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxPendonor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var selected = (Pendonor)comboBoxPendonor.SelectedItem;
-            txtGolonganDarah.Text = selected.GolonganDarah;
-            txtRhesus.Text = selected.Rhesus;
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             string username = "Admin";
             FormMainMenu form = new FormMainMenu(username);
             this.Hide();
             form.ShowDialog();
-        }
-
-        private void FormKelolaStokDarah_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void LoadData()
@@ -218,5 +197,16 @@ namespace praktekwinform
                 }
             }
         }
+
+        private void FormKelolaStokDarah_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRhesus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

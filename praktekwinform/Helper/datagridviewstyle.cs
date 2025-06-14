@@ -71,7 +71,6 @@ namespace praktekwinform.Design
         }
         public static void StretchAllColumns(DataGridView dgv)
         {
-            // Setelah data masuk!
             foreach (DataGridViewColumn col in dgv.Columns)
             {
                 col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

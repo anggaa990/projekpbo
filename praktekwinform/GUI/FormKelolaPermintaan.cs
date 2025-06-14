@@ -22,6 +22,22 @@ namespace praktekwinform
             LoadData();
         }
 
+        private void LoadData()
+        {
+            dataGridView1.Columns.Clear();
+
+            var permintaan = new PermintaanDarah();
+            var dt = permintaan.GetAll();
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Data tidak ditemukan di tabel permintaan_darah.");
+            }
+
+            dataGridView1.DataSource = dt;
+            TambahTombolAksi();
+        }
+
         private void FormKelolaPermintaan_Load(object sender, EventArgs e)
         {
             cbGolongan.Items.AddRange(new string[] { "A", "B", "AB", "O" });
@@ -98,11 +114,6 @@ namespace praktekwinform
                 MessageBox.Show("Gagal menyimpan permintaan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -110,22 +121,6 @@ namespace praktekwinform
             FormMainMenu form = new FormMainMenu(username);
             this.Hide();
             form.ShowDialog();
-        }
-
-        private void LoadData()
-        {
-            dataGridView1.Columns.Clear();
-
-            var permintaan = new PermintaanDarah();
-            var dt = permintaan.GetAll();
-
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("Data tidak ditemukan di tabel permintaan_darah.");
-            }
-
-            dataGridView1.DataSource = dt;
-            TambahTombolAksi();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -179,6 +174,11 @@ namespace praktekwinform
         }
 
         private void cbGolongan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
