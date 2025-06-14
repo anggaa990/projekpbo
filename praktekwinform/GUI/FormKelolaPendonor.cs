@@ -80,40 +80,6 @@ namespace praktekwinform
             txtNoHP.Clear();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtNama.Text) || cbJenisKelamin.SelectedIndex == -1 ||
-        cbGolonganDarah.SelectedIndex == -1 || cbRhesus.SelectedIndex == -1 ||
-        string.IsNullOrWhiteSpace(txtAlamat.Text) || string.IsNullOrWhiteSpace(txtNoHP.Text))
-            {
-                MessageBox.Show("Harap lengkapi semua data.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Validasi No HP hanya angka
-            if (!txtNoHP.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Nomor HP hanya boleh berisi angka.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            Pendonorbase pendonor = new Pendonor
-            {
-                Nama = txtNama.Text.Trim(),
-                JenisKelamin = cbJenisKelamin.Text,
-                GolonganDarah = cbGolonganDarah.Text,
-                Rhesus = cbRhesus.Text,
-                TanggalLahir = dtpTanggalLahir.Value.Date,
-                Alamat = txtAlamat.Text.Trim(),
-                NoHP = txtNoHP.Text.Trim()
-            };
-
-            pendonor.Simpan();  // Memanggil Simpan menggunakan polymorphism
-
-            MessageBox.Show("Data berhasil disimpan.");
-            ClearForm();
-        }
-
         private void dgvPendonor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -194,6 +160,40 @@ namespace praktekwinform
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnSimpan_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNama.Text) || cbJenisKelamin.SelectedIndex == -1 ||
+        cbGolonganDarah.SelectedIndex == -1 || cbRhesus.SelectedIndex == -1 ||
+        string.IsNullOrWhiteSpace(txtAlamat.Text) || string.IsNullOrWhiteSpace(txtNoHP.Text))
+            {
+                MessageBox.Show("Harap lengkapi semua data.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validasi No HP hanya angka
+            if (!txtNoHP.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Nomor HP hanya boleh berisi angka.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Pendonorbase pendonor = new Pendonor
+            {
+                Nama = txtNama.Text.Trim(),
+                JenisKelamin = cbJenisKelamin.Text,
+                GolonganDarah = cbGolonganDarah.Text,
+                Rhesus = cbRhesus.Text,
+                TanggalLahir = dtpTanggalLahir.Value.Date,
+                Alamat = txtAlamat.Text.Trim(),
+                NoHP = txtNoHP.Text.Trim()
+            };
+
+            pendonor.Simpan();  // Memanggil Simpan menggunakan polymorphism
+
+            MessageBox.Show("Data berhasil disimpan.");
+            ClearForm();
         }
     }
 }

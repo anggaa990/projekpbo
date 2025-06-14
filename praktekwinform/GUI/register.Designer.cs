@@ -48,7 +48,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Microsoft Sans Serif", 12F);
-            linkLabel1.Location = new Point(1190, 504);
+            linkLabel1.Location = new Point(1185, 504);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(60, 25);
             linkLabel1.TabIndex = 18;
@@ -60,7 +60,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 12F);
-            label5.Location = new Point(1126, 469);
+            label5.Location = new Point(1119, 469);
             label5.Name = "label5";
             label5.Size = new Size(188, 25);
             label5.TabIndex = 17;
@@ -74,7 +74,7 @@
             btnRegister.ForeColor = Color.Honeydew;
             btnRegister.Location = new Point(1167, 424);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(94, 29);
+            btnRegister.Size = new Size(94, 42);
             btnRegister.TabIndex = 16;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;

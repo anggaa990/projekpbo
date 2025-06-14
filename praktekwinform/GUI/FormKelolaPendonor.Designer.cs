@@ -111,6 +111,7 @@
             btnSimpan.TabIndex = 6;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = true;
+            btnSimpan.Click += btnSimpan_Click;
             // 
             // label1
             // 

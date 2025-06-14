@@ -24,6 +24,14 @@ namespace praktekwinform
             this.Load += FormKelolaEvent_Load;
         }
 
+        private void ClearForm()
+        {
+            txtAlamat.Text = "";
+            dtpTanggal.Value = DateTime.Today;
+            txtWaktu.Text = "";
+            txtDeskripsi.Text = "";
+            EventData = null;
+        }
 
         private void FormKelolaEvent_Load(object sender, EventArgs e)
         {
@@ -116,14 +124,6 @@ namespace praktekwinform
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string username = "Admin";
-            FormMainMenu form = new FormMainMenu(username);
-            this.Hide();
-            form.ShowDialog();
-        }
-
         private void btnSimpan_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtAlamat.Text) ||
@@ -161,13 +161,12 @@ namespace praktekwinform
             ClearForm();
         }
 
-        private void ClearForm()
+        private void button2_Click(object sender, EventArgs e)
         {
-            txtAlamat.Text = "";
-            dtpTanggal.Value = DateTime.Today;
-            txtWaktu.Text = "";
-            txtDeskripsi.Text = "";
-            EventData = null;
+            string username = "Admin";
+            FormMainMenu form = new FormMainMenu(username);
+            this.Hide();
+            form.ShowDialog();
         }
         private void btnBatal_Click(object sender, EventArgs e)
         {

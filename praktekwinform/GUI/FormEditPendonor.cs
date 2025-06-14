@@ -32,6 +32,16 @@ namespace praktekwinform
             txtNoHP.Text = noHp;
         }
 
+        private void FormEditPendonor_Load(object sender, EventArgs e)
+        {
+            cbJenisKelamin.Items.Clear();
+            cbGolonganDarah.Items.Clear();
+            cbRhesus.Items.Clear();
+
+            cbJenisKelamin.Items.AddRange(new string[] { "Laki-laki", "Perempuan" });
+            cbGolonganDarah.Items.AddRange(new string[] { "A", "B", "AB", "O" });
+            cbRhesus.Items.AddRange(new string[] { "Positif", "Negatif" });
+        }
         private void btnSimpan_Click_1(object sender, EventArgs e)
         {
             using (var conn = new NpgsqlConnection(Database.ConnString))
@@ -64,16 +74,7 @@ namespace praktekwinform
             this.Close();
         }
 
-        private void FormEditPendonor_Load(object sender, EventArgs e)
-        {
-            cbJenisKelamin.Items.Clear();
-            cbGolonganDarah.Items.Clear();
-            cbRhesus.Items.Clear();
-
-            cbJenisKelamin.Items.AddRange(new string[] { "Laki-laki", "Perempuan" });
-            cbGolonganDarah.Items.AddRange(new string[] { "A", "B", "AB", "O" });
-            cbRhesus.Items.AddRange(new string[] { "Positif", "Negatif" });
-        }
+       
 
         private void txtNama_TextChanged(object sender, EventArgs e)
         {
