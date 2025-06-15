@@ -147,20 +147,7 @@ namespace praktekwinform
             form.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
@@ -195,5 +182,20 @@ namespace praktekwinform
             MessageBox.Show("Data berhasil disimpan.");
             ClearForm();
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
+
 }
